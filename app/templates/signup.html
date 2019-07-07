@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container col-md-4" style="margin: 5rem 0 0 15 rem">
+    <form method="post">
+        <h5 class="md-3">サインイン</h5>
+
+        {{ form.hidden_tag() }}
+        {{ form.name(size=50, placeholder='name', class_ = 'form-control') }}<br>
+
+        {{ form.email(size=50, placeholder='email', class_='form-control') }}<br>
+        {% for error in form.email.errors %} <span style="color:red">{{ error }}</span>{% endfor %}
+
+        {{ form.mobile(size=50, placeholder='mobile number', class_='form-control') }}<br>
+        {{ form.country(size=50, placeholder='country', class_='form-control') }}<br>
+
+        {{ form.newsletter(checked='') }} {{ form.newsletter.label }}<br>
+        {{ form.submit(class_='btn btn-success')}}
+    </form>
+</div>
+{% endblock %}
