@@ -23,7 +23,7 @@
                      </a>
                   </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="#">サインアップ</a>
+                     <a class="nav-link" href="{{ url_for('sign_up') }}">サインアップ</a>
                   </li>
                    <li class="nav-item">
                      <a class="nav-link" href="#">概要</a>
@@ -36,5 +36,16 @@
          </div>
       </nav>
    {% block content %} {% endblock %}
+      <!--flash messages-->
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            {% for message in messages %}
+               <div class="container alert alert-dismissable alert-success">
+                  <button type="button" data-dismiss="alert">x</button>
+               <strong>{{ message }}</strong>
+               </div>
+            {% endfor %}
+         {% endif %}
+      {% endwith %}
      </body>
 </html>

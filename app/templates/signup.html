@@ -12,6 +12,7 @@
         {% for error in form.email.errors %} <span style="color:red">{{ error }}</span>{% endfor %}
 
         {{ form.mobile(size=50, placeholder='mobile number', class_='form-control') }}<br>
+        {% for error in form.mobile.errors %} <span style="color:red">{{ error }}</span>{% endfor %}
         {{ form.country(size=50, placeholder='country', class_='form-control') }}<br>
 
         {{ form.newsletter(checked='') }} {{ form.newsletter.label }}<br>
