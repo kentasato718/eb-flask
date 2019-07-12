@@ -14,7 +14,7 @@ class AllTests(unittest.TestCase):
 	def test_home_page_contents(self):
 		response = self.application.get('/')
 		self.assertEqual(response.status_code, 200)
-		self.assertIn(b'Sign up', response.data)
+		self.assertIn(b'Sign Up', response.data)
 
 
 if __name__ == '__main__':
